@@ -1,3 +1,3 @@
-# JSX is Optional, but Recommended
+# Basic Component
 
-Instead of jsx, you can use the `React.createElement` api to create elements.
+Creating a function that returns JSX allows use to use that function _as JSX_!
