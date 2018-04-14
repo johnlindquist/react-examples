@@ -1,13 +1,19 @@
-import React, { Component } from "react"
+import React from "react"
 import { render } from "react-dom"
+import styled from "styled-components"
+const StyledButton = styled.button`
+  font-size: 17px;
+  font-family: "Avenir", sans-serif;
+  font-weight: bold;
+  padding: 0.5rem;
+  border: 0.5rem solid #663399;
+  border-radius: 1rem;
+  cursor: pointer;
 
-class Container extends Component {
-  render() {
-    return this.props.children({ message: "Function as child" })
+  &:hover {
+    background: #ffeeee;
+    border-color: #885599;
   }
-}
+`
 
-render(
-  <Container>{props => <h1>{props.message}</h1>}</Container>,
-  document.querySelector("#root")
-)
+render(<StyledButton>Click me!</StyledButton>, document.querySelector("#root"))
