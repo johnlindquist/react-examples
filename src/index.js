@@ -1,16 +1,13 @@
-import React from "react"
+import React, { Component } from "react"
 import { render } from "react-dom"
 
-const MyComponent = () => (
-  <div>
-    <input type="text" />
-    <button>Click me</button>
-  </div>
-)
+class Container extends Component {
+  render() {
+    return this.props.children({ message: "Function as child" })
+  }
+}
 
 render(
-  <div>
-    <MyComponent />
-  </div>,
+  <Container>{props => <h1>{props.message}</h1>}</Container>,
   document.querySelector("#root")
 )
