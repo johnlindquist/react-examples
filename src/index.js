@@ -11,7 +11,6 @@ const MyComponent = () => (
 render(
   <div>
     <MyComponent />
-  </div>
-),
+  </div>,
   document.querySelector("#root")
 )
