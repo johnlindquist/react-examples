@@ -1,3 +1,3 @@
-# Basic Component
+# Props Allow You to Pass Values to Components
 
-Creating a function that returns JSX allows use to use that function _as JSX_!
+The `attributes` of JSX are received in your function as `props`

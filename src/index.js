@@ -1,17 +1,13 @@
 import React from "react"
 import { render } from "react-dom"
 
-const MyComponent = () => (
-  <div>
-    <input type="text" />
-    <button>Click me</button>
-  </div>
+const Message = props => (
+  <h1>
+    {props.greeting}, {props.name}
+  </h1>
 )
 
 render(
-  <div>
-    <MyComponent />
-  </div>
-),
+  <Message greeting="Hello" name="John" />,
   document.querySelector("#root")
 )
