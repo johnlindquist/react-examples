@@ -1,29 +1,34 @@
 import React, { Component } from "react"
 import { render } from "react-dom"
 
+const URL = `https:/starwars.egghead.training`
+
 class Container extends Component {
-  state = { count: 0 }
-  onInc = () => this.setState(state => ({ count: state.count + 1 }))
-  onDec = () => this.setState(state => ({ count: state.count - 1 }))
+  state = {}
+  async componentDidMount() {
+    const person = await fetch(`${URL}/people/${this.props.person}`).then(res =>
+      res.json()
+    )
+    this.setState(state => ({ person }))
+  }
 
   render() {
     return this.props.children({
-      count: this.state.count,
-      onInc: this.onInc,
-      onDec: this.onDec
+      person: this.state.person
     })
   }
 }
 
 render(
-  <Container>
-    {({ count, onInc, onDec }) => (
-      <div>
-        <button onClick={onDec}>-</button>
-        <span>{JSON.stringify(count)}</span>
-        <button onClick={onInc}>+</button>
-      </div>
-    )}
+  <Container person={0}>
+    {({ person }) =>
+      person ? (
+        <div>
+          <h1>{person.name}</h1>
+          <img src={`${URL}/${person.image}`} alt="" />
+        </div>
+      ) : null
+    }
   </Container>,
   document.querySelector("#root")
 )
