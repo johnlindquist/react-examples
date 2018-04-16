@@ -1,19 +1,11 @@
 import React from "react"
 import { render } from "react-dom"
-import styled from "styled-components"
-const StyledButton = styled.button`
-  font-size: 17px;
-  font-family: "Avenir", sans-serif;
-  font-weight: bold;
-  padding: 0.5rem;
-  border: 0.5rem solid #663399;
-  border-radius: 1rem;
-  cursor: pointer;
 
-  &:hover {
-    background: #ffeeee;
-    border-color: #885599;
-  }
-`
+const invalid = true
 
-render(<StyledButton>Click me!</StyledButton>, document.querySelector("#root"))
+render(
+  <div style={{ textDecoration: invalid ? "line-through" : "underline" }}>
+    Hello
+  </div>,
+  document.querySelector("#root")
+)
