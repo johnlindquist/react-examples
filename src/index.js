@@ -1,34 +1,30 @@
 import React, { Component } from "react"
 import { render } from "react-dom"
 
-const names = ["Carol", "Barb", "Adam", "Devin", "Erin"]
-class People extends Component {
-  ascend = (a, b) => a > b
-  descend = (a, b) => a < b
+const URL = `https://starwars.egghead.training`
 
-  state = { compare: this.ascend }
+class Demo extends Component {
+  state = { side: "left", date: new Date() }
 
-  toggleSort = () => {
-    this.setState(state => ({
-      compare: state.compare === this.descend ? this.ascend : this.descend
-    }))
+  select = side => event => {
+    this.setState(
+      //null prevents rendering
+      state => (state.side === side ? null : { side, date: new Date() })
+    )
   }
 
   render() {
     return (
       <div>
-        <button onClick={this.toggleSort}>
-          Click to
-          {this.state.compare === this.ascend ? " Descend" : " Ascend"}
-        </button>
-        <ul>
-          {this.props.names
-            .sort(this.state.compare)
-            .map(name => <li key={name}>{name}</li>)}
-        </ul>
+        <h1>{this.state.side}</h1>
+        <h2>Don't render unless you click a different button</h2>
+
+        <button onClick={this.select("left")}>Left</button>
+        <button onClick={this.select("right")}>Right</button>
+        <h1>{this.state.date.toString()}</h1>
       </div>
     )
   }
 }
 
-render(<People names={names} />, document.querySelector("#root"))
+render(<Demo />, document.querySelector("#root"))
