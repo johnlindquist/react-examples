@@ -15,7 +15,6 @@ class People extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <button onClick={this.toggleSort}>
