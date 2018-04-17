@@ -1,16 +1,35 @@
-import React from "react"
+import React, { Component } from "react"
 import { render } from "react-dom"
 
-const Card = props => (
-  <div>
-    <h1>{props.header}</h1>
-    <article>{props.content}</article>
-  </div>
-)
+const names = ["Carol", "Barb", "Adam", "Devin", "Erin"]
+class People extends Component {
+  ascend = (a, b) => a > b
+  descend = (a, b) => a < b
 
-Card.defaultProps = {
-  header: "Don't forget to add a header!",
-  content: "Don't forget to add content!"
+  state = { compare: this.ascend }
+
+  toggleSort = () => {
+    this.setState(state => ({
+      compare: state.compare === this.descend ? this.ascend : this.descend
+    }))
+  }
+
+  render() {
+    console.log(this.state)
+    return (
+      <div>
+        <button onClick={this.toggleSort}>
+          Click to
+          {this.state.compare === this.ascend ? " Descend" : " Ascend"}
+        </button>
+        <ul>
+          {this.props.names
+            .sort(this.state.compare)
+            .map(name => <li key={name}>{name}</li>)}
+        </ul>
+      </div>
+    )
+  }
 }
 
-render(<Card content="React is fun!" />, document.querySelector("#root"))
+render(<People names={names} />, document.querySelector("#root"))
