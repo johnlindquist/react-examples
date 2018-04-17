@@ -1,34 +1,23 @@
 import React, { Component } from "react"
 import { render } from "react-dom"
 
-const URL = `https://starwars.egghead.training`
+class Demo extends Component {
+  state = { count: 0, name: "John" }
 
-class Container extends Component {
-  state = {}
-  async componentDidMount() {
-    const person = await fetch(`${URL}/people/${this.props.person}`).then(res =>
-      res.json()
-    )
-    this.setState(state => ({ person }))
-  }
+  //setState takes an object
+  addOne = () => this.setState({ count: this.state.count + 1 })
+  //or a function
+  addTwo = () => this.setState(state => ({ count: state.count + 1 }))
 
   render() {
-    return this.state.person
-      ? this.props.children({
-          person: this.state.person
-        })
-      : null
+    return (
+      <div>
+        <button onClick={this.addOne}>+1</button>
+        {this.state.count} {this.state.name}
+        <button onClick={this.addTwo}>+2</button>
+      </div>
+    )
   }
 }
 
-render(
-  <Container person={0}>
-    {({ person }) => (
-      <div>
-        <h1>{person.name}</h1>
-        <img src={`${URL}/${person.image}`} alt="" />
-      </div>
-    )}
-  </Container>,
-  document.querySelector("#root")
-)
+render(<Demo />, document.querySelector("#root"))
