@@ -1,3 +1,3 @@
-# Props Allow You to Pass Values to Components
+# Pass Values Through Props
 
 The `attributes` of JSX are received in your function as `props`
