@@ -4,24 +4,40 @@ import { render } from "react-dom"
 const URL = `https://starwars.egghead.training`
 
 class Demo extends Component {
-  state = { side: "left", date: new Date() }
+  state = {
+    loading: true,
+    id: 0,
+    person: null
+  }
 
-  select = side => event => {
-    this.setState(
-      //null prevents rendering
-      state => (state.side === side ? null : { side, date: new Date() })
-    )
+  loadNext = async () => {
+    this.setState(state => ({ loading: true, id: state.id + 1 }))
+    const person = await fetch(
+      `${URL}/people/${this.state.id}?delay=3000` //add a 3 second delay
+    ).then(res => res.json())
+    this.setState(state => ({ loading: false, person }))
+  }
+
+  componentDidMount() {
+    this.loadNext()
   }
 
   render() {
     return (
       <div>
-        <h1>{this.state.side}</h1>
-        <h2>Don't render unless you click a different button</h2>
-
-        <button onClick={this.select("left")}>Left</button>
-        <button onClick={this.select("right")}>Right</button>
-        <h1>{this.state.date.toString()}</h1>
+        <button disabled={this.state.loading} onClick={this.loadNext}>
+          Load Next
+        </button>
+        <div>
+          {this.state.loading ? (
+            <img
+              src="https://loading.io/spinners/balls/index.circle-slack-loading-icon.svg"
+              alt=""
+            />
+          ) : (
+            <img src={`${URL}/${this.state.person.image}`} alt="" />
+          )}
+        </div>
       </div>
     )
   }
