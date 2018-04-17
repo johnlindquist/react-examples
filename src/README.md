@@ -1,1 +1,1 @@
-# "className" for CSS classes, not "class"!
+# A React Class Component

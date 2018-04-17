@@ -1,8 +1,20 @@
-import React from "react"
+import React, { Component } from "react"
 import { render } from "react-dom"
 
+class Greeter extends Component {
+  render() {
+    return (
+      <div>
+        {this.props.greeting}, {this.props.name}
+      </div>
+    )
+  }
+}
+
 render(
-  //"demo" is just a dummy class included for this example
-  <div className="demo">Use "className", not "class"!</div>,
+  <div>
+    <Greeter greeting="Hola" name="Mindy" />
+    <Greeter greeting="Bonjour" name="John" />
+  </div>,
   document.querySelector("#root")
 )
