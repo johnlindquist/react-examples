@@ -1,34 +1,16 @@
-import React, { Component } from "react"
+import React from "react"
 import { render } from "react-dom"
 
-const URL = `https://starwars.egghead.training`
+const Card = props => (
+  <div>
+    <h1>{props.header}</h1>
+    <article>{props.content}</article>
+  </div>
+)
 
-class Container extends Component {
-  state = {}
-  async componentDidMount() {
-    const person = await fetch(`${URL}/people/${this.props.person}`).then(res =>
-      res.json()
-    )
-    this.setState(state => ({ person }))
-  }
-
-  render() {
-    return this.state.person
-      ? this.props.children({
-          person: this.state.person
-        })
-      : null
-  }
+Card.defaultProps = {
+  header: "Don't forget to add a header!",
+  content: "Don't forget to add content!"
 }
 
-render(
-  <Container person={0}>
-    {({ person }) => (
-      <div>
-        <h1>{person.name}</h1>
-        <img src={`${URL}/${person.image}`} alt="" />
-      </div>
-    )}
-  </Container>,
-  document.querySelector("#root")
-)
+render(<Card content="React is fun!" />, document.querySelector("#root"))
