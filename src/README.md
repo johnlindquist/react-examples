@@ -1,1 +1,1 @@
-# State Object vs Function
+# "className" for CSS classes, not "class"!

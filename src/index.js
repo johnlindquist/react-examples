@@ -1,23 +1,8 @@
-import React, { Component } from "react"
+import React from "react"
 import { render } from "react-dom"
 
-class Demo extends Component {
-  state = { count: 0, name: "John" }
-
-  //setState takes an object
-  addOne = () => this.setState({ count: this.state.count + 1 })
-  //or a function
-  addTwo = () => this.setState(state => ({ count: state.count + 1 }))
-
-  render() {
-    return (
-      <div>
-        <button onClick={this.addOne}>+1</button>
-        {this.state.count} {this.state.name}
-        <button onClick={this.addTwo}>+2</button>
-      </div>
-    )
-  }
-}
-
-render(<Demo />, document.querySelector("#root"))
+render(
+  //"demo" is just a dummy class included for this example
+  <div className="demo">Use "className", not "class"!</div>,
+  document.querySelector("#root")
+)
