@@ -1,24 +1,33 @@
-import React from "react"
+import React, { Component } from "react"
 import { render } from "react-dom"
 import { Form, Text } from "react-form"
 
-const validate = value => ({
-  error:
-    !value || !/.*egghead.*/.test(value) ? "Type 'egghead' somewhere" : null
-})
+class App extends Component {
+  state = {}
 
-render(
-  <Form validateOnMount>
-    {formApi => (
-      <form>
-        <Text field="egghead" id="egghead" validate={validate} />
-        {formApi.errors ? (
-          formApi.errors.egghead ? (
-            <h2>{formApi.errors.egghead}</h2>
-          ) : null
-        ) : null}
-      </form>
-    )}
-  </Form>,
-  document.querySelector("#root")
-)
+  submit = formValues => {
+    this.setState(state => formValues)
+  }
+
+  render() {
+    return (
+      <div>
+        <div>Type something then hit "Enter"</div>
+        <Form onSubmit={this.submit}>
+          {formApi => (
+            <form onSubmit={formApi.submitForm}>
+              <Text field="message" id="message" />
+              <button type="submit">Submit</button>
+            </form>
+          )}
+        </Form>
+        <h1>
+          You submitted{" "}
+          {this.state.message ? this.state.message : " nothing yet..."}
+        </h1>
+      </div>
+    )
+  }
+}
+
+render(<App />, document.querySelector("#root"))
