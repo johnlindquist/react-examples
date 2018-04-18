@@ -1,24 +1,21 @@
 import React, { Component } from "react"
 import { render } from "react-dom"
+import { MemoryRouter as Router, Route } from "react-router"
+import { Link } from "react-router-dom"
 
-class BugCatcher extends Component {
-  state = { caughtError: false, info: "" }
-
-  componentDidCatch(error, info) {
-    this.setState(state => ({ caughtError: true, info }))
-  }
-
-  render() {
-    if (this.state.caughtError) return <h2>Something went wrong 😢</h2>
-    return this.props.children
-  }
-}
-
-const NastyBug = () => <div>{null()}</div>
+const Home = () => <h1>Home Page</h1>
+const About = () => <h1>About Page</h1>
 
 render(
-  <BugCatcher>
-    <NastyBug />
-  </BugCatcher>,
+  <Router>
+    <div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+    </div>
+  </Router>,
   document.querySelector("#root")
 )
