@@ -8,7 +8,7 @@ render(
       <form onSubmit={formApi.submitForm}>
         <Text field="hello" id="hello" />
         <button type="submit">Submit</button>
-        <code>{JSON.stringify(formApi)}</code>
+        <code>{JSON.stringify(formApi, null, " ")}</code>
       </form>
     )}
   </Form>,
