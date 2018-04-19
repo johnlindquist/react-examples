@@ -1,26 +1,32 @@
 import React, { Component } from "react"
 import { render } from "react-dom"
-import { TweenMax } from "gsap"
 
-class App extends Component {
-  buttonRef = React.createRef()
+class Mouse extends Component {
+  state = { x: 0, y: 0 }
 
-  onClick = () => {
-    TweenMax.to(this.buttonRef.current, 1, {
-      x: Math.random() * 100,
-      y: Math.random() * 100
-    })
+  onMouseMove = event => {
+    const { x, y } = event.nativeEvent
+    this.setState({ x, y })
   }
 
   render() {
-    return (
-      <div>
-        <button ref={this.buttonRef} onClick={this.onClick}>
-          Move me
-        </button>
+    return this.state ? (
+      <div onMouseMove={this.onMouseMove}>
+        {this.props.children(this.state)}
       </div>
-    )
+    ) : null
   }
 }
 
-render(<App />, document.querySelector("#root"))
+render(
+  <Mouse>
+    {({ x, y }) => (
+      <div
+        style={{ width: "200px", height: "200px", backgroundColor: "yellow" }}
+      >
+        x: {x} y: {y}
+      </div>
+    )}
+  </Mouse>,
+  document.querySelector("#root")
+)
