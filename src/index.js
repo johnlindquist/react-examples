@@ -1,24 +1,44 @@
-import React from "react"
+import React, { Component } from "react"
 import { render } from "react-dom"
-import { Form, Text } from "react-form"
 
-const validate = value => ({
-  error:
-    !value || !/.*egghead.*/.test(value) ? "Type 'egghead' somewhere" : null
-})
+class Counter extends Component {
+  state = { count: 0 }
+
+  componentDidMount() {
+    setInterval(() => this.setState(state => ({ count: state.count + 1 })), 250)
+  }
+
+  render() {
+    return this.props.children(this.state.count)
+  }
+}
+
+class Multiplier extends Component {
+  state = { num: 0 }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { count, by } = nextProps
+
+    const num = count * by
+
+    return num % 2 ? { num } : null
+  }
+
+  render() {
+    return <h2>{this.state.num}</h2>
+  }
+}
 
 render(
-  <Form validateOnMount>
-    {formApi => (
-      <form>
-        <Text field="egghead" id="egghead" validate={validate} />
-        {formApi.errors ? (
-          formApi.errors.egghead ? (
-            <h2>{formApi.errors.egghead}</h2>
-          ) : null
-        ) : null}
-      </form>
+  <Counter>
+    {count => (
+      <div>
+        {count}
+        <Multiplier count={count} by={3} />
+        <Multiplier count={count} by={5} />
+        <Multiplier count={count} by={7} />
+      </div>
     )}
-  </Form>,
+  </Counter>,
   document.querySelector("#root")
 )
