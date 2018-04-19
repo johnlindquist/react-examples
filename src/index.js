@@ -1,44 +1,31 @@
 import React, { Component } from "react"
 import { render } from "react-dom"
+import { TweenMax } from "gsap"
 
-class Counter extends Component {
-  state = { count: 0 }
+const NormalButton = React.forwardRef((props, ref) => (
+  <button ref={ref} onClick={props.onClick}>
+    {props.children}
+  </button>
+))
 
-  componentDidMount() {
-    setInterval(() => this.setState(state => ({ count: state.count + 1 })), 250)
+class App extends Component {
+  buttonRef = React.createRef()
+
+  onClick = () => {
+    TweenMax.to(this.buttonRef.current, 1, {
+      rotation: "+=360"
+    })
   }
 
   render() {
-    return this.props.children(this.state.count)
-  }
-}
-
-class Multiplier extends Component {
-  state = { num: 0 }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { count, by } = nextProps
-
-    const num = count * by
-
-    return num % 2 ? { num } : null
-  }
-
-  render() {
-    return <h2>{this.state.num}</h2>
-  }
-}
-
-render(
-  <Counter>
-    {count => (
+    return (
       <div>
-        {count}
-        <Multiplier count={count} by={3} />
-        <Multiplier count={count} by={5} />
-        <Multiplier count={count} by={7} />
+        <NormalButton ref={this.buttonRef} onClick={this.onClick}>
+          Spin me!
+        </NormalButton>
       </div>
-    )}
-  </Counter>,
-  document.querySelector("#root")
-)
+    )
+  }
+}
+
+render(<App />, document.querySelector("#root"))
