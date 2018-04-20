@@ -37,11 +37,21 @@ const move = ref => () => {
   })
 }
 
+const reset = ref => () => {
+  TweenMax.to(ref.current, 1, {
+    x: 0,
+    y: 0,
+    rotationX: 0,
+    rotationY: 0
+  })
+}
+
 render(
   <div>
     <button onClick={rotateX(boxRef)}>Rotate X</button>
     <button onClick={rotateY(boxRef)}>Rotate Y</button>
     <button onClick={move(boxRef)}>Move</button>
+    <button onClick={reset(boxRef)}>Reset</button>
 
     <Box ref={boxRef}>
       <h2>Hello!</h2>
