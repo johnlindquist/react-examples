@@ -1,3 +1,4 @@
-# Context Provider
+# Updating Context Values
 
-A provider overrides any defaults set when creating the context.
+Create a component that passes state and state updaters to a Provider which wraps
+children. Then any Consumer will have access to the state and updaters.
