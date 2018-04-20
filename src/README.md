@@ -1,3 +1,3 @@
-# `forwardRef`
+# Pass the ref
 
-Expose access to an element nested inside of components.
+Class components and state aren't needed if you're only working with refs.
