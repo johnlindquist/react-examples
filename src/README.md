@@ -1,3 +1,3 @@
-# Context
+# Context Provider
 
-Pass data globally
+A provider overrides any defaults set when creating the context.

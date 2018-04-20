@@ -15,9 +15,11 @@ const Avatar = () => (
 
 render(
   <App>
-    <Dashboard>
-      <Avatar />
-    </Dashboard>
+    <BasicContext.Provider value={"bonjour"}>
+      <Dashboard>
+        <Avatar />
+      </Dashboard>
+    </BasicContext.Provider>
   </App>,
   document.querySelector("#root")
 )
