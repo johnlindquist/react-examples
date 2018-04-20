@@ -1,24 +1,23 @@
 import React from "react"
 import { render } from "react-dom"
-import { Form, Text } from "react-form"
 
-const validate = value => ({
-  error:
-    !value || !/.*egghead.*/.test(value) ? "Type 'egghead' somewhere" : null
-})
+const BasicContext = React.createContext("hello")
+
+const App = props => <div>{props.children}</div>
+const Dashboard = props => <div>{props.children}</div>
+
+//no props here
+const Avatar = () => (
+  <BasicContext.Consumer>
+    {context => <div>{context}</div>}
+  </BasicContext.Consumer>
+)
 
 render(
-  <Form validateOnMount>
-    {formApi => (
-      <form>
-        <Text field="egghead" id="egghead" validate={validate} />
-        {formApi.errors ? (
-          formApi.errors.egghead ? (
-            <h2>{formApi.errors.egghead}</h2>
-          ) : null
-        ) : null}
-      </form>
-    )}
-  </Form>,
+  <App>
+    <Dashboard>
+      <Avatar />
+    </Dashboard>
+  </App>,
   document.querySelector("#root")
 )

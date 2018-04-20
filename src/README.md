@@ -1,3 +1,3 @@
-# Validate a Field
+# Context
 
-Check for `errors` on the `formApi`. You can set the error message in the validator.
+Pass data globally
