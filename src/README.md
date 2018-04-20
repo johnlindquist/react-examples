@@ -1,3 +1,4 @@
-# `forwardRef`
+# StrictMode
 
-Expose access to an element nested inside of components.
+Wrap your components in `<StrictMode>` so
+React can provide warnings about api changes.
