@@ -8,7 +8,7 @@ class Demo extends Component {
   addOne = () => this.setState({ count: this.state.count + 1 })
   //or a function
   addTwo = () => this.setState(state => ({ count: state.count + 1 }))
-
+  //and notice the "name" remains unaffected
   render() {
     return (
       <div>
