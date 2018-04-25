@@ -126,12 +126,16 @@
           "branch": "className"
         },
         {
-          "slug": "style-check-props",
-          "branch": "style-check-props"
-        },
-        {
           "slug": "css-in-js",
           "branch": "css-in-js"
+        },
+        {
+          "slug": "style-attrs",
+          "branch": "style-attrs"
+        },
+        {
+          "slug": "style-check-props",
+          "branch": "style-check-props"
         },
         {
           "slug": "styled-component",
