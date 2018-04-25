@@ -124,6 +124,10 @@
         {
           "slug": "css-in-js",
           "branch": "css-in-js"
+        },
+        {
+          "slug": "styled-component",
+          "branch": "styled-component"
         }
       ]
     },
