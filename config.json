@@ -21,8 +21,8 @@
           "branch": "ternary"
         },
         {
-          "slug": "map",
-          "branch": "map"
+          "slug": "array",
+          "branch": "array"
         },
         {
           "slug": "function",
@@ -51,7 +51,10 @@
           "slug": "default-props",
           "branch": "default-props"
         },
-
+        {
+          "slug": "map",
+          "branch": "map"
+        },
         {
           "slug": "conditional-render",
           "branch": "conditional-render"
