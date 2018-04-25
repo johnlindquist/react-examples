@@ -1,1 +1,1 @@
-# Conditional Styles by Props
+# Extend Styled Components

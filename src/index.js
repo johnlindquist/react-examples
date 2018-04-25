@@ -3,22 +3,18 @@ import { render } from "react-dom"
 import styled from "styled-components"
 
 const Header = styled.h1`
-  border: ${props =>
-    props.primary ? "3px dashed blue" : "initial"};
+  color: red;
+  font-weight: bold;
+`
 
-  color: ${props =>
-    props.primary
-      ? "green"
-      : props.secondary
-        ? "purple"
-        : "initial"};
+const ShadowyHeader = Header.extend`
+  text-shadow: 1px 1px 5px black;
 `
 
 render(
   <div>
-    <Header>A normal h1</Header>
-    <Header primary>A primary h1</Header>
-    <Header secondary>A secondary h1</Header>
+    <Header>This is a Header</Header>
+    <ShadowyHeader>I love shadows</ShadowyHeader>
   </div>,
   document.querySelector("#root")
 )
