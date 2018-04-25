@@ -11,6 +11,22 @@
         {
           "slug": "no-jsx",
           "branch": "no-jsx"
+        },
+        {
+          "slug": "curlies",
+          "branch": "curlies"
+        },
+        {
+          "slug": "ternary",
+          "branch": "ternary"
+        },
+        {
+          "slug": "map",
+          "branch": "map"
+        },
+        {
+          "slug": "function",
+          "branch": "function"
         }
       ]
     },
@@ -30,22 +46,12 @@
           "slug": "class-component",
           "branch": "class-component"
         },
-        {
-          "slug": "prop-types",
-          "branch": "prop-types"
-        },
+
         {
           "slug": "default-props",
           "branch": "default-props"
         },
-        {
-          "slug": "map",
-          "branch": "map"
-        },
-        {
-          "slug": "sort",
-          "branch": "sort"
-        },
+
         {
           "slug": "conditional-render",
           "branch": "conditional-render"
@@ -113,6 +119,11 @@
         {
           "slug": "set-state-null",
           "branch": "set-state-null"
+        },
+
+        {
+          "slug": "sort",
+          "branch": "sort"
         },
         {
           "slug": "function-as-child",
