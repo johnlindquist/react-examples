@@ -1,9 +1,9 @@
 import React from "react"
 import { render } from "react-dom"
 
-const on = true
+const Hello = () => <h1>Hello</h1>
 
 render(
-  <h1>{on ? "ON" : "OFF"}</h1>,
+  <div>{Hello()}</div>,
   document.querySelector("#root")
 )

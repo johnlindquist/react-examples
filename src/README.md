@@ -1,1 +1,1 @@
-# Ternary Conditionals
+# Function in Curlies
