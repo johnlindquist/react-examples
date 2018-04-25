@@ -2,23 +2,29 @@ import React from "react"
 import { render } from "react-dom"
 import styled from "styled-components"
 
-const Header = styled.h1`
-  border: ${props =>
-    props.primary ? "3px dashed blue" : "initial"};
+const PasswordField = styled.input.attrs({
+  type: "password",
+  placeholder: "type a password"
+})`
+  color: red;
+`
 
-  color: ${props =>
-    props.primary
-      ? "green"
-      : props.secondary
-        ? "purple"
-        : "initial"};
+const Yoda = styled.img.attrs({
+  src: "https://starwars.egghead.training/yoda.jpg"
+})`
+  border: 10px solid black;
+`
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 render(
-  <div>
-    <Header>A normal h1</Header>
-    <Header primary>A primary h1</Header>
-    <Header secondary>A secondary h1</Header>
-  </div>,
+  <Container>
+    <PasswordField />
+    <Yoda />
+  </Container>,
   document.querySelector("#root")
 )
