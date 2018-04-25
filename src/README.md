@@ -1,1 +1,1 @@
-# `props.children`
+# `props.children` as a Function
