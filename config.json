@@ -56,7 +56,10 @@
           "slug": "map",
           "branch": "map"
         },
-
+        {
+          "slug": "props-children",
+          "branch": "props-children"
+        },
         {
           "slug": "class-component",
           "branch": "class-component"
@@ -106,10 +109,6 @@
         {
           "slug": "router",
           "branch": "router"
-        },
-        {
-          "slug": "props-children",
-          "branch": "props-children"
         }
       ]
     },
