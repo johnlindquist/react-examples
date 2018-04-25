@@ -1,3 +1,1 @@
-# Hello World
-
-The simplest React with JSX example:
+# Conditional Styles by Props
