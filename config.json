@@ -108,8 +108,8 @@
           "branch": "router"
         },
         {
-          "slug": "router",
-          "branch": "router"
+          "slug": "props-children",
+          "branch": "props-children"
         }
       ]
     },
