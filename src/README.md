@@ -1,1 +1,1 @@
-# Style a Component
+# Style a Component by Passing `className`
