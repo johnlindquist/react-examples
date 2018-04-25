@@ -126,6 +126,10 @@
           "branch": "className"
         },
         {
+          "slug": "style-check-props",
+          "branch": "style-check-props"
+        },
+        {
           "slug": "css-in-js",
           "branch": "css-in-js"
         },
