@@ -1,1 +1,1 @@
-# Function in Curlies
+# `props.children`
