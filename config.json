@@ -8,10 +8,7 @@
           "slug": "hello",
           "branch": "master"
         },
-        {
-          "slug": "no-jsx",
-          "branch": "no-jsx"
-        },
+
         {
           "slug": "curlies",
           "branch": "curlies"
@@ -27,6 +24,10 @@
         {
           "slug": "function",
           "branch": "function"
+        },
+        {
+          "slug": "no-jsx",
+          "branch": "no-jsx"
         }
       ]
     },
@@ -42,22 +43,23 @@
           "slug": "pass-props",
           "branch": "pass-props"
         },
-        {
-          "slug": "class-component",
-          "branch": "class-component"
-        },
 
         {
           "slug": "default-props",
           "branch": "default-props"
         },
         {
+          "slug": "conditional-render",
+          "branch": "conditional-render"
+        },
+        {
           "slug": "map",
           "branch": "map"
         },
+
         {
-          "slug": "conditional-render",
-          "branch": "conditional-render"
+          "slug": "class-component",
+          "branch": "class-component"
         }
       ]
     },
