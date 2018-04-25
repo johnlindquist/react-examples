@@ -217,6 +217,10 @@
       "title": "Advanced",
       "lessons": [
         {
+          "slug": "should-component-update",
+          "branch": "should-component-update"
+        },
+        {
           "slug": "gdsfp",
           "branch": "gdsfp"
         },
