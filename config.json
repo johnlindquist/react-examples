@@ -11,7 +11,13 @@
         {
           "slug": "no-jsx",
           "branch": "no-jsx"
-        },
+        }
+      ]
+    },
+    {
+      "slug": "components",
+      "title": "Components",
+      "lessons": [
         {
           "slug": "pure-component",
           "branch": "pure-component"
