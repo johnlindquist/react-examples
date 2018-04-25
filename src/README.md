@@ -1,1 +1,1 @@
-# Evaluate Curlies
+# Ternary Conditionals

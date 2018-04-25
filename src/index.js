@@ -1,7 +1,9 @@
 import React from "react"
 import { render } from "react-dom"
 
+const on = true
+
 render(
-  <h1>{2 + 2} is my favorite number!</h1>,
+  <h1>{on ? "ON" : "OFF"}</h1>,
   document.querySelector("#root")
 )
