@@ -67,6 +67,49 @@
       ]
     },
     {
+      "slug": "state",
+      "title": "State",
+      "lessons": [
+        {
+          "slug": "state",
+          "branch": "state"
+        },
+        {
+          "slug": "state-object-vs-function",
+          "branch": "state-object-vs-function"
+        },
+        {
+          "slug": "set-state-null",
+          "branch": "set-state-null"
+        },
+
+        {
+          "slug": "sort",
+          "branch": "sort"
+        },
+        {
+          "slug": "function-as-child",
+          "branch": "function-as-child"
+        },
+        {
+          "slug": "counter",
+          "branch": "counter"
+        },
+        {
+          "slug": "fetch",
+          "branch": "fetch"
+        },
+        {
+          "slug": "spinner",
+          "branch": "spinner"
+        },
+        {
+          "slug": "compound-components",
+          "branch": "compound-components"
+        }
+      ]
+    },
+    {
       "slug": "styles",
       "title": "Styles",
       "lessons": [
@@ -112,49 +155,7 @@
         }
       ]
     },
-    {
-      "slug": "state",
-      "title": "State",
-      "lessons": [
-        {
-          "slug": "state",
-          "branch": "state"
-        },
-        {
-          "slug": "state-object-vs-function",
-          "branch": "state-object-vs-function"
-        },
-        {
-          "slug": "set-state-null",
-          "branch": "set-state-null"
-        },
 
-        {
-          "slug": "sort",
-          "branch": "sort"
-        },
-        {
-          "slug": "function-as-child",
-          "branch": "function-as-child"
-        },
-        {
-          "slug": "counter",
-          "branch": "counter"
-        },
-        {
-          "slug": "fetch",
-          "branch": "fetch"
-        },
-        {
-          "slug": "spinner",
-          "branch": "spinner"
-        },
-        {
-          "slug": "compound-components",
-          "branch": "compound-components"
-        }
-      ]
-    },
     {
       "slug": "context",
       "title": "Context",
