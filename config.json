@@ -106,10 +106,6 @@
         {
           "slug": "router",
           "branch": "router"
-        },
-        {
-          "slug": "router",
-          "branch": "router"
         }
       ]
     },
