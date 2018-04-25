@@ -13,8 +13,8 @@
           "branch": "no-jsx"
         },
         {
-          "slug": "curlies",
-          "branch": "curlies"
+          "slug": "curlies-map",
+          "branch": "curlies-map"
         },
         {
           "slug": "ternary",
@@ -55,6 +55,10 @@
         {
           "slug": "conditional-render",
           "branch": "conditional-render"
+        },
+        {
+          "slug": "map",
+          "branch": "map"
         }
       ]
     },
