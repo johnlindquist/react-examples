@@ -57,6 +57,10 @@
           "branch": "map"
         },
         {
+          "slug": "props-spread",
+          "branch": "props-spread"
+        },
+        {
           "slug": "props-children-prop",
           "branch": "props-children-prop"
         },
