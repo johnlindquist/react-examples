@@ -140,6 +140,11 @@
         {
           "slug": "styled-component",
           "branch": "styled-component"
+        },
+
+        {
+          "slug": "style-theme",
+          "branch": "style-theme"
         }
       ]
     },
