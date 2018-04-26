@@ -140,6 +140,10 @@
         {
           "slug": "styled-component",
           "branch": "styled-component"
+        },
+        {
+          "slug": "style-other",
+          "branch": "style-other"
         }
       ]
     },
