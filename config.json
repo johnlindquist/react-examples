@@ -148,6 +148,10 @@
         {
           "slug": "style-other",
           "branch": "style-other"
+        },
+        {
+          "slug": "style-theme",
+          "branch": "style-theme"
         }
       ]
     },
